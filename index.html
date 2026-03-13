@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet&Salt Cafe Bakery | Lincoln Park, Chicago</title>
+<meta name="description" content="Artisan pastries, European desserts & specialty coffee in Lincoln Park, Chicago. Handmade croissants, pain au chocolat, sachertorte & more. Order online or visit us!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--cream:#FDF8F3;--warm-white:#FFFDF9;--tan:#E8DDD3;--light-brown:#C4A882;
+--brown:#8B6F47;--dark-brown:#5C4A2E;--accent:#C17B3E;--accent-light:#E8A85C;
+--text:#3D2E1F;--text-light:#7A6B5A;--text-muted:#A89880;
+--radius:12px;--radius-lg:20px;--shadow:0 2px 20px rgba(92,74,46,0.08);
+--shadow-lg:0 8px 40px rgba(92,74,46,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--warm-white);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.2}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ========== ANNOUNCEMENT BAR ========== */
+.announcement{background:var(--dark-brown);color:#fff;text-align:center;padding:10px 24px;font-size:13px;letter-spacing:0.5px}
+.announcement a{color:var(--accent-light);font-weight:600;text-decoration:underline}
+
+/* ========== NAVBAR ========== */
+.navbar{background:var(--warm-white);border-bottom:1px solid var(--tan);position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--dark-brown)}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--text-light);transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#fff!important;padding:10px 24px;border-radius:50px;font-weight:600;font-size:14px;transition:background .2s}
+.nav-cta:hover{background:var(--dark-brown)}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.mobile-toggle span{display:block;width:24px;height:2px;background:var(--dark-brown);margin:6px 0;transition:all .3s}
+
+/* ========== HERO ========== */
+.hero{position:relative;min-height:85vh;display:flex;align-items:center;overflow:hidden;background:var(--cream)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(253,248,243,0.92) 0%,rgba(253,248,243,0.75) 40%,rgba(253,248,243,0.3) 100%)}
+.hero-content{position:relative;z-index:2;max-width:620px;padding:80px 0}
+.hero-badges{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.hero-badge{background:rgba(193,123,62,0.12);color:var(--accent);padding:6px 16px;border-radius:50px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.hero h1{font-size:clamp(42px,6vw,72px);color:var(--dark-brown);margin-bottom:20px;font-weight:700}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:500}
+.hero p{font-size:18px;color:var(--text-light);margin-bottom:36px;max-width:480px;line-height:1.7}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;border:none;cursor:pointer;transition:all .25s}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--dark-brown);transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+.btn-outline{background:transparent;color:var(--dark-brown);border:2px solid var(--dark-brown)}
+.btn-outline:hover{background:var(--dark-brown);color:#fff}
+
+/* ========== FEATURES ROW ========== */
+.features{padding:60px 0;background:var(--warm-white);border-bottom:1px solid var(--tan)}
+.features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.feature-card{text-align:center;padding:32px 20px;background:var(--cream);border-radius:var(--radius-lg);transition:transform .2s,box-shadow .2s}
+.feature-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.feature-icon{width:56px;height:56px;background:rgba(193,123,62,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:24px}
+.feature-card h4{font-size:18px;margin-bottom:6px;color:var(--dark-brown)}
+.feature-card p{font-size:13px;color:var(--text-muted)}
+
+/* ========== BEST SELLERS ========== */
+.bestsellers{padding:80px 0;background:var(--cream)}
+.section-header{text-align:center;margin-bottom:48px}
+.section-label{font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.section-header h2{font-size:clamp(32px,4vw,48px);color:var(--dark-brown)}
+.section-header p{color:var(--text-muted);margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto}
+
+.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+.tab-btn{padding:10px 28px;border-radius:50px;border:2px solid var(--tan);background:transparent;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--text-light);cursor:pointer;transition:all .2s}
+.tab-btn.active,.tab-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.product-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+.product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.product-img{height:220px;overflow:hidden;position:relative}
+.product-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.product-card:hover .product-img img{transform:scale(1.05)}
+.product-tag{position:absolute;top:12px;left:12px;background:var(--accent);color:#fff;padding:4px 12px;border-radius:50px;font-size:11px;font-weight:600}
+.product-info{padding:20px 24px}
+.product-info h4{font-size:20px;color:var(--dark-brown);margin-bottom:4px}
+.product-info .desc{font-size:13px;color:var(--text-muted);margin-bottom:12px}
+.product-price{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--accent)}
+
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* ========== ABOUT / SPLIT ========== */
+.about-split{padding:80px 0;background:var(--warm-white)}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.split-text .section-label{text-align:left}
+.split-text h2{font-size:clamp(28px,3.5vw,44px);color:var(--dark-brown);margin-bottom:20px}
+.split-text p{color:var(--text-light);margin-bottom:16px;line-height:1.8}
+.split-text .highlight-list{list-style:none;margin:24px 0}
+.split-text .highlight-list li{padding:8px 0;font-size:15px;color:var(--text);display:flex;align-items:center;gap:12px}
+.split-text .highlight-list li::before{content:'✦';color:var(--accent);font-size:14px}
+.split-img{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);position:relative}
+.split-img img{width:100%;height:500px;object-fit:cover}
+.split-img::after{content:'';position:absolute;inset:0;border:2px solid rgba(193,123,62,0.15);border-radius:var(--radius-lg);pointer-events:none}
+
+/* ========== REVIEWS ========== */
+.reviews{padding:80px 0;background:var(--cream)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.review-card{background:#fff;padding:32px;border-radius:var(--radius-lg);box-shadow:var(--shadow);position:relative}
+.review-card::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:72px;color:var(--tan);position:absolute;top:12px;right:24px;line-height:1}
+.review-stars{color:var(--accent-light);font-size:16px;margin-bottom:12px;letter-spacing:2px}
+.review-card p{font-size:15px;color:var(--text-light);line-height:1.7;margin-bottom:16px;position:relative;z-index:1}
+.review-author{display:flex;align-items:center;gap:12px}
+.review-avatar{width:40px;height:40px;border-radius:50%;background:var(--tan);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--dark-brown);font-size:16px}
+.review-name{font-weight:600;font-size:14px;color:var(--dark-brown)}
+.review-date{font-size:12px;color:var(--text-muted)}
+
+/* ========== HOURS / CTA BAND ========== */
+.cta-band{padding:60px 0;background:var(--dark-brown);color:#fff;text-align:center}
+.cta-band h2{font-size:clamp(28px,3.5vw,42px);color:#fff;margin-bottom:12px}
+.cta-band p{color:rgba(255,255,255,0.7);margin-bottom:32px;font-size:16px}
+.hours-grid{display:inline-grid;grid-template-columns:auto auto;gap:4px 32px;text-align:left;margin-bottom:32px}
+.hours-grid .day{font-weight:600;color:rgba(255,255,255,0.9)}
+.hours-grid .time{color:rgba(255,255,255,0.6)}
+.hours-grid .closed{color:var(--accent-light)}
+
+/* ========== FOOTER ========== */
+.footer{padding:60px 0 32px;background:var(--cream);border-top:1px solid var(--tan)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand .logo{font-size:22px;margin-bottom:12px;display:block}
+.footer-brand p{font-size:14px;color:var(--text-muted);line-height:1.7;max-width:280px}
+.footer-col h5{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--dark-brown);margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a{font-size:14px;color:var(--text-light);transition:color .2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{border-top:1px solid var(--tan);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bottom p{font-size:13px;color:var(--text-muted)}
+.social-links{display:flex;gap:16px}
+.social-links a{width:36px;height:36px;border-radius:50%;background:var(--tan);display:flex;align-items:center;justify-content:center;font-size:16px;transition:background .2s,transform .2s}
+.social-links a:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:968px){
+.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--warm-white);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--tan);box-shadow:var(--shadow)}
+.nav-links.open{display:flex}
+.mobile-toggle{display:block}
+.features-grid{grid-template-columns:repeat(2,1fr)}
+.products-grid{grid-template-columns:repeat(2,1fr)}
+.split-grid{grid-template-columns:1fr;gap:32px}
+.split-img{order:-1}
+.reviews-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+.features-grid{grid-template-columns:1fr}
+.products-grid{grid-template-columns:1fr}
+.hero-content{padding:60px 0 40px}
+.footer-grid{grid-template-columns:1fr}
+.hours-grid{grid-template-columns:auto auto}
+}
+</style>
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement">
+  🥐 Now on Uber Eats! Free delivery on your first order — <a href="https://www.toasttab.com/local/order/sweet-salt-cafe-bakery-2413-2415-north-clark-street" target="_blank">Order Online</a>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="logo">Sweet<span>&</span>Salt</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#hours">Hours</a></li>
+      <li><a href="https://www.instagram.com/sweetsaltcafebakery" target="_blank">Instagram</a></li>
+      <li><a href="https://www.toasttab.com/local/order/sweet-salt-cafe-bakery-2413-2415-north-clark-street" target="_blank" class="nav-cta">Order Online</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1600&q=80" alt="Sweet&Salt Cafe Bakery interior" loading="eager">
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badges">
+        <span class="hero-badge">Handmade</span>
+        <span class="hero-badge">Local</span>
+        <span class="hero-badge">Wholesome</span>
+      </div>
+      <h1>Crafted <em>Fresh</em> Daily</h1>
+      <p>Artisan European pastries, specialty coffee & all-day breakfast in the heart of Lincoln Park. Every bite, made from scratch with love.</p>
+      <div class="hero-btns">
+        <a href="https://www.toasttab.com/local/order/sweet-salt-cafe-bakery-2413-2415-north-clark-street" target="_blank" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          Order Online
+        </a>
+        <a href="#menu" class="btn btn-outline">View Menu</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🤲</div>
+        <h4>Made from Scratch</h4>
+        <p>Every pastry handcrafted in-house daily</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🥐</div>
+        <h4>Baked Daily</h4>
+        <p>Fresh out of the oven each morning</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">☕</div>
+        <h4>Specialty Coffee</h4>
+        <p>Expertly roasted & perfectly pulled</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h4>Easy Ordering</h4>
+        <p>Online, Uber Eats, or walk right in</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Best Sellers -->
+<section class="bestsellers" id="menu">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Our Favorites</div>
+      <h2>Best Sellers</h2>
+      <p>From buttery croissants to rich European desserts — discover what keeps Lincoln Park coming back.</p>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="drinks">Drinks</button>
+      <button class="tab-btn" data-tab="pastries">Pastries</button>
+      <button class="tab-btn" data-tab="breakfast">Breakfast</button>
+    </div>
+
+    <!-- Drinks -->
+    <div class="tab-content active" id="tab-drinks">
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800" alt="Cafe Latte" loading="lazy">
+            <span class="product-tag">Popular</span>
+          </div>
+          <div class="product-info">
+            <h4>Café Latte</h4>
+            <p class="desc">Velvety steamed milk with a double shot of espresso</p>
+            <span class="product-price">$5.50</span>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800" alt="Cappuccino" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h4>Cappuccino</h4>
+            <p class="desc">Classic Italian style with rich microfoam</p>
+            <span class="product-price">$5.25</span>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=75" alt="Matcha Latte" loading="lazy">
+            <span class="product-tag">New</span>
+          </div>
+          <div class="product-info">
+            <h4>Matcha Latte</h4>
+            <p class="desc">Ceremonial grade matcha with oat milk</p>
+            <span class="product-price">$6.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pastries -->
+    <div class="tab-content" id="tab-pastries">
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038024a?w=800" alt="Butter Croissant" loading="lazy">
+            <span class="product-tag">Signature</span>
+          </div>
+          <div class="product-info">
+            <h4>Butter Croissant</h4>
+            <p class="desc">36-hour laminated dough, pure European butter</p>
+            <span class="product-price">$4.50</span>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1486427944544-d2c246c4df14?w=800" alt="Pain au Chocolat" loading="lazy">
+            <span class="product-tag">Best Seller</span>
+          </div>
+          <div class="product-info">
+            <h4>Pain au Chocolat</h4>
+            <p class="desc">Flaky croissant with premium dark chocolate batons</p>
+            <span class="product-price">$5.25</span>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1558024920-b41e1887dc32?w=800" alt="Cinnamon Roll" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h4>Cinnamon Roll</h4>
+            <p class="desc">Warm, gooey with cream cheese frosting</p>
+            <span class="product-price">$5.50</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Breakfast -->
+    <div class="tab-content" id="tab-breakfast">
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1486427944544-d2c246c4df14?w=800&q=75" alt="Shakshuka" loading="lazy">
+            <span class="product-tag">Chef's Pick</span>
+          </div>
+          <div class="product-info">
+            <h4>Shakshuka</h4>
+            <p class="desc">Poached eggs in spiced tomato sauce with fresh bread</p>
+            <span class="product-price">$13.50</span>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038024a?w=800&q=75" alt="Croissant Sandwich" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h4>Croissant Sandwich</h4>
+            <p class="desc">Ham, gruyère & sunny egg on a butter croissant</p>
+            <span class="product-price">$11.00</span>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1558024920-b41e1887dc32?w=800&q=75" alt="French Toast" loading="lazy">
+            <span class="product-tag">Popular</span>
+          </div>
+          <div class="product-info">
+            <h4>Tiramisu French Toast</h4>
+            <p class="desc">Mascarpone, espresso cream & cocoa dusting</p>
+            <span class="product-price">$14.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About / Split Section -->
+<section class="about-split" id="about">
+  <div class="container">
+    <div class="split-grid">
+      <div class="split-text">
+        <div class="section-label">Our Story</div>
+        <h2>Freshly Baked,<br>Taste the Difference</h2>
+        <p>At Sweet&Salt, we bring a slice of Parisian patisserie to Lincoln Park. Every morning, our bakers arrive before dawn to craft each pastry, cake, and loaf by hand — using time-honored European techniques and the finest ingredients.</p>
+        <p>From our signature sachertorte to warm, buttery croissants and perfectly pulled espressos, every detail is designed to make your day a little sweeter (and saltier).</p>
+        <ul class="highlight-list">
+          <li>European-trained pastry chefs</li>
+          <li>Locally sourced, premium ingredients</li>
+          <li>All-day breakfast & specialty coffee</li>
+          <li>Cozy neighborhood atmosphere</li>
+        </ul>
+        <a href="https://www.toasttab.com/local/order/sweet-salt-cafe-bakery-2413-2415-north-clark-street" target="_blank" class="btn btn-primary" style="margin-top:8px">Order Now</a>
+      </div>
+      <div class="split-img">
+        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038024a?w=900&q=80" alt="Freshly baked croissants at Sweet&Salt" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What People Say</div>
+      <h2>Customer Reviews</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>The best croissants I've had outside of Paris! The pain au chocolat is absolutely divine. This place is a Lincoln Park gem.</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div>
+            <div class="review-name">Sarah M.</div>
+            <div class="review-date">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>Amazing shakshuka and the cinnamon rolls are to die for. The staff is so warm and welcoming — feels like a European cafe right on Clark St.</p>
+        <div class="review-author">
+          <div class="review-avatar">J</div>
+          <div>
+            <div class="review-name">James K.</div>
+            <div class="review-date">Yelp Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>My go-to spot for coffee and pastries. The tiramisu is incredible and the espresso is perfectly pulled every time. Can't recommend enough!</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-name">Ana R.</div>
+            <div class="review-date">Google Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hours / CTA -->
+<section class="cta-band" id="hours">
+  <div class="container">
+    <h2>Visit Us in Lincoln Park</h2>
+    <p>2413 N Clark St, Chicago, IL 60614 &nbsp;·&nbsp; (248) 752-7367</p>
+    <div class="hours-grid">
+      <span class="day">Monday</span><span class="time closed">CLOSED</span>
+      <span class="day">Tuesday</span><span class="time">8:00 AM – 5:00 PM</span>
+      <span class="day">Wednesday</span><span class="time">8:00 AM – 5:00 PM</span>
+      <span class="day">Thursday</span><span class="time">8:00 AM – 5:00 PM</span>
+      <span class="day">Friday</span><span class="time">8:00 AM – 5:00 PM</span>
+      <span class="day">Saturday</span><span class="time">8:00 AM – 7:00 PM</span>
+      <span class="day">Sunday</span><span class="time">8:00 AM – 6:00 PM</span>
+    </div>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="https://www.toasttab.com/local/order/sweet-salt-cafe-bakery-2413-2415-north-clark-street" target="_blank" class="btn btn-primary">Order Online</a>
+      <a href="https://maps.google.com/?q=2413+N+Clark+St+Chicago+IL+60614" target="_blank" class="btn" style="background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3)">Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo">Sweet<span>&</span>Salt</span>
+        <p>Artisan pastries, European desserts & specialty coffee. A Parisian patisserie experience in the heart of Lincoln Park, Chicago.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#hours">Hours & Location</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Order</h5>
+        <ul>
+          <li><a href="https://www.toasttab.com/local/order/sweet-salt-cafe-bakery-2413-2415-north-clark-street" target="_blank">Order Online</a></li>
+          <li><a href="#">Uber Eats</a></li>
+          <li><a href="#">Catering</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+12487527367">(248) 752-7367</a></li>
+          <li><a href="https://maps.google.com/?q=2413+N+Clark+St+Chicago+IL+60614" target="_blank">2413 N Clark St</a></li>
+          <li><a href="https://www.instagram.com/sweetsaltcafebakery" target="_blank">@sweetsaltcafebakery</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Sweet&Salt Cafe Bakery LLC. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/sweetsaltcafebakery" target="_blank" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="tel:+12487527367" aria-label="Phone">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </a>
+        <a href="https://maps.google.com/?q=2413+N+Clark+St+Chicago+IL+60614" target="_blank" aria-label="Location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id !== '#') {
+      e.preventDefault();
+      document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('navLinks')?.classList.remove('open');
+    }
+  });
+});
+
+// Navbar background on scroll
+window.addEventListener('scroll', () => {
+  document.querySelector('.navbar').style.boxShadow = window.scrollY > 50 ? '0 2px 20px rgba(92,74,46,0.08)' : 'none';
+});
+
+// Intersection Observer for fade-in animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.feature-card, .product-card, .review-card, .split-text, .split-img').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
