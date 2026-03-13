@@ -44,7 +44,7 @@ a{text-decoration:none;color:inherit}
 /* ========== HERO ========== */
 .hero{position:relative;min-height:85vh;display:flex;align-items:center;overflow:hidden;background:var(--cream)}
 .hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(253,248,243,0.92) 0%,rgba(253,248,243,0.75) 40%,rgba(253,248,243,0.3) 100%)}
 .hero-content{position:relative;z-index:2;max-width:620px;padding:80px 0}
 .hero-badges{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
@@ -83,7 +83,7 @@ a{text-decoration:none;color:inherit}
 .product-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
 .product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
 .product-img{height:220px;overflow:hidden;position:relative}
-.product-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.product-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s}
 .product-card:hover .product-img img{transform:scale(1.05)}
 .product-tag{position:absolute;top:12px;left:12px;background:var(--accent);color:#fff;padding:4px 12px;border-radius:50px;font-size:11px;font-weight:600}
 .product-info{padding:20px 24px}
@@ -104,7 +104,7 @@ a{text-decoration:none;color:inherit}
 .split-text .highlight-list li{padding:8px 0;font-size:15px;color:var(--text);display:flex;align-items:center;gap:12px}
 .split-text .highlight-list li::before{content:'✦';color:var(--accent);font-size:14px}
 .split-img{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);position:relative}
-.split-img img{width:100%;height:500px;object-fit:cover}
+.split-img img{width:100%;height:500px;object-fit:cover;object-position:center}
 .split-img::after{content:'';position:absolute;inset:0;border:2px solid rgba(193,123,62,0.15);border-radius:var(--radius-lg);pointer-events:none}
 
 /* ========== REVIEWS ========== */
@@ -262,7 +262,7 @@ a{text-decoration:none;color:inherit}
       <div class="products-grid">
         <div class="product-card">
           <div class="product-img">
-            <img src="https://files.catbox.moe/fn0c6y.jpg" alt="Cafe Latte" loading="lazy">
+            <img src="https://files.catbox.moe/ruuznd.jpg" alt="Cafe Latte" loading="lazy">
             <span class="product-tag">Popular</span>
           </div>
           <div class="product-info">
@@ -273,7 +273,7 @@ a{text-decoration:none;color:inherit}
         </div>
         <div class="product-card">
           <div class="product-img">
-            <img src="https://files.catbox.moe/fn0c6y.jpg" alt="Cappuccino" loading="lazy">
+            <img src="https://files.catbox.moe/xi1a2i.jpg" alt="Cappuccino" loading="lazy">
           </div>
           <div class="product-info">
             <h4>Cappuccino</h4>
